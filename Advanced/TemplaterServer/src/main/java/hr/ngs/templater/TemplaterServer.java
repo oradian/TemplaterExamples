@@ -601,14 +601,7 @@ public class TemplaterServer implements AutoCloseable {
             }
             URLClassLoader ucl = new URLClassLoader(urls.toArray(new URL[0]));
             TemplaterServer server = new TemplaterServer(port, timeoutLimit, tmpFolder, ucl, libreoffice, logLevel);
-            System.out.println("Server started on port " + port + ", press Enter to stop ...");
-            try {
-                System.in.read();
-            } catch (final Exception e) {
-                e.printStackTrace();
-            }
-            server.close();
-            ucl.close();
+            System.out.println("Server started on port " + port);
         } catch (final Exception e) {
             e.printStackTrace();
         }
